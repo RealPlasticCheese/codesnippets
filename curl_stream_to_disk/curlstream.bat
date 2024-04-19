@@ -26,4 +26,7 @@ echo %mydate%_%mytime%_%streamName%
 # save the stream to disk -
 curl %streamUrl% --output ./%mydate%_%mytime%_%streamName%
 # If the stream fails, it will start the process again
+
+# Add a delay of 5 seconds before re-running the loop
+ping -n 6 127.0.0.1 >nul 2>&1
 goto top
